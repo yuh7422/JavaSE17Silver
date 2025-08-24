@@ -1,1 +1,1 @@
-# JavaSE17Silver
+# JavaSE17Silverの勉強に個人的に役立ったコードです
