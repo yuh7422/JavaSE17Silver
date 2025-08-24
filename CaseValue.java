@@ -5,7 +5,7 @@ public class CaseValue {
 		final int NUM = 100;
 
 		switch (num) {
-		case 'A' -> {}			//OK（char定数 → intに拡張）
+		case 'A' -> {}			// OK（char定数 → intに拡張）
 		case (byte) 1 -> {}		// OK（byte定数 → intに拡張）
 		case 10 -> {}			// OK（int定数）
 		case NUM -> {}			// OK(NUMはint定数)
