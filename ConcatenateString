@@ -1,0 +1,25 @@
+public class ConcatenateStrings {
+	public static void main(String[] args) {
+
+		// String型はconcatメソッドで文字列連結
+		String str1 = "Dino";
+		String str2 = "saur";
+		String dino = str1.concat(str2);
+
+		System.out.println(dino);
+
+		// StringBuilderはappendメソッドで文字列連結
+		StringBuilder dinoName = new StringBuilder();
+
+		dinoName.append("Tyranno");
+		dinoName.append("saurus\n");
+		dinoName.append("Tricera");
+		dinoName.append("tops\n");
+		
+		// +　(加算演算子)でもOK
+		// 繰り返しすごい回数連結するならconcatメソッド推奨(その方が高速)
+		dinoName.append("Spino" + "saurus\n");
+
+		System.out.println(dinoName);
+	}
+}
