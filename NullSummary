@@ -1,0 +1,76 @@
+public class NullSummary {
+	public static void main(String[] args) {
+		
+		/* 
+		 * 【 nullの代入】
+		 *  ・　null は何も参照していないことを示すリテラル
+		 *  ・　参照型にしか代入できない
+		 */
+		
+		// int,boolean(プリミティブ型)へ代入 …　コンパイルエラー
+//		int i = null;
+//		boolean result = null;
+		
+		// Integer,Boolean(参照型)へ代入 …　OK！
+		Integer sample1 = null;
+		Boolean flag = null;
+
+		
+		/*
+		 *  【 nullの比較 】
+		 *  　・　== , !=, .equals() で比較できる
+		 *  　・　.equals() を呼び出すと NullPointerException（NPE）
+		 */
+		
+		String a = null;
+		String b = "Hello";
+
+		System.out.println(a == null);      // true
+		System.out.println(a != null);	    // false
+		System.out.println(b.equals(null)); // false
+//		System.out.println(a.equals(b));    // NPE!
+		
+		
+		/*
+		 *  【 nullの型キャストチェック 】
+		 *  　・　null を instanceof すると必ず false になる
+		 *  　・　null は実体がないから
+		 */
+		String c = null;
+		System.out.println(c instanceof String); // false
+		
+		
+		// 【 nullをswitch式に使う】
+		
+		switch(null) {
+		case null -> System.out.println("nullです");
+		default -> System.out.println("デフォルトです"); // nullです
+		};
+		
+		
+		// 【 nullと文字列】
+		
+		// .concat() 
+		String d = null;
+		String e = "sample";
+		
+//		d.concat("A");  // NPE!
+//		e.concat(null); // NPE!
+		
+		/* .valueof()　
+		 * 　　 staticメソッド
+		 *　　 　null に対して直接メソッドを呼んでいないので NPE にならない
+		 */
+		Object obj = new Object();
+		String f = String.valueOf((Object)null);
+		System.out.println(f); // null
+		
+		// .toString()
+		String g = null;
+//		System.out.println(g.toString()); // NPE!
+		
+		// 加算演算子
+		System.out.println(e + " " + null); // sample null
+		
+	}
+}
