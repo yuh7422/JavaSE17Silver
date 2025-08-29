@@ -29,19 +29,16 @@ public class TryCatchFinally {
 //            }
 //            reader.close();
 		
-		} catch (IndexOutOfBoundsException e) {
+		// catchする例外はORで書ける
+		} catch (IndexOutOfBoundsException | NullPointerException e) {
 			System.out.println("Catch IndexOutOfBoundsException!");
 			
-		// IndexOutOfBoundsExceptionを上でcatchしているのでコンパイルエラー
+		// IndexOutOfBoundsException(親クラス)を上でcatchしているのでコンパイルエラー
 //		} catch (ArrayIndexOutOfBoundsException e) {
 //			System.out.println("ArrayIndexOutOfBoundsException!");
 			
 		} catch (RuntimeException e) {
 			System.out.println("Catch RuntimeException!");
-			
-		// RuntimeExceptionを上でcatchしているためコンパイルエラー
-//		} catch (NullPointerException e){ 
-//			System.out.println("Catch NullPointerException!");
 			
 		} finally {
 			System.out.println("This is finally");
