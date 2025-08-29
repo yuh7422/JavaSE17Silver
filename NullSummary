@@ -42,10 +42,10 @@ public class NullSummary {
 		
 		// 【 nullをswitch式に使う】
 		
-		switch(null) {
-		case null -> System.out.println("nullです");
-		default -> System.out.println("デフォルトです"); // nullです
-		};
+//		switch(null) {
+//			case null -> System.out.println("nullです");
+//			default -> System.out.println("デフォルトです"); // NPE!
+//		};
 		
 		
 		// 【 nullと文字列】
