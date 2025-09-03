@@ -1,0 +1,22 @@
+package sample;
+
+public class Main {
+    public static void main(String[] args) {
+        TopLevel top = new TopLevel();
+
+        // publicなインナークラス → どこからでもアクセス可能
+        top.new PublicInner();
+        
+        // protectedなインナークラス → 同一パッケージ所属またはサブクラスならアクセス可能
+        top.new ProtectedInner();
+        
+        // package privateなインナークラス → 呼出元が同一パッケージ所属ならアクセス可能
+        top.new PackagePrivateInner();
+
+        // privateなインナークラス　→　別のクラスからは直接アクセスできない
+//      outer.new PrivateInner();   // コンパイルエラー
+
+        // Outerクラスのメソッド経由ならインナークラスのアクセス修飾子に関係なく呼べる
+        top.test();
+    }
+}
