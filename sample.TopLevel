@@ -1,0 +1,41 @@
+package sample;
+
+// トップレベルクラス　…　[使えるアクセス修飾子] public、 package private
+public class TopLevel {
+	
+    // public インナークラス
+    public class PublicInner {
+        public void hello() {
+            System.out.println("Publicなインナークラスからこんにちは！");
+        }
+    }
+
+    // protected インナークラス
+    protected class ProtectedInner {
+        public void hello() {
+            System.out.println("Protectedなインナークラスからこんにちは！");
+        }
+    }
+    
+    // package private インナークラス
+    class PackagePrivateInner {
+        public void hello() {
+            System.out.println("package privateなインナークラスからこんにちは！");
+        }
+    }
+    // private インナークラス
+    private class PrivateInner {
+        public void hello() {
+            System.out.println("Privateなインナークラスからこんにちは！");
+        }
+    }
+
+    // アクセス修飾子が効くのは、別のトップレベルクラス(例:Main)から呼び出したとき
+    // トップレベルクラスからインナークラスは問題なく呼び出せる
+    public void test() {
+        new PublicInner().hello();
+        new ProtectedInner().hello();
+        new PrivateInner().hello();
+        new PackagePrivateInner().hello();
+    }
+}
